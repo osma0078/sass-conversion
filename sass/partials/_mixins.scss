@@ -1,0 +1,18 @@
+// small view
+@mixin small {
+  @media all and (min-width:701px) and (max-width:900px){
+    @content;
+  }
+}
+// medium view
+@mixin medium {
+  @media all and (min-width:901px) and (max-width: 1400px){
+    @content;
+  }
+}
+// large view
+@mixin large {
+  @media all and (min-width:1401px){
+    @content;
+  }
+}
