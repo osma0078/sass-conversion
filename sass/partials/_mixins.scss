@@ -1,18 +1,92 @@
-// small view
-@mixin small {
-  @media all and (min-width:701px) and (max-width:900px){
-    @content;
-  }
+//DEFAULTS * (all)
+@mixin all {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
-// medium view
-@mixin medium {
-  @media all and (min-width:901px) and (max-width: 1400px){
-    @content;
-  }
+
+//LAYOUT .bg-header
+@mixin bg-header {    
+    background-color: $white;
+    background-color: $lightblue;
+    color: $darkgrey;
+    border-bottom: 1rem solid $medblue;
+    border-top: 1rem solid $darkblue;
+    position: relative;
 }
-// large view
-@mixin large {
-  @media all and (min-width:1401px){
-    @content;
-  }
+
+//.bg-header:before,.bg-header:after
+@mixin b-af{
+    content:"";
+    position: absolute;
+    bottom: -1rem;
+    width: 30%;
+    height: 1rem;
+    background-color: $darkblue;
+}
+
+//header
+@mixin header{
+    width: 400px; /* default */
+    margin: 0 auto;
+    position: relative;
+}
+
+//column2 - .col-2
+@mixin col2{
+    width: 50%;
+    float: left;
+    padding-bottom: 2rem;
+    border-left: 1px solid $darkblue;
+    margin-bottom: 2rem;  
+}
+
+//NAVIGATION - nav>ul>li>a
+@mixin nav{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $darkgrey;    
+    font-size: 1.414rem;
+    letter-spacing: 0.25rem;
+    border: 1px solid $lightgrey; 
+    border-bottom: none;
+    padding: 1.0rem 2rem;
+    line-height: 1;
+    background-color: $white;
+}
+
+//CONTENT - header h1 i.fa-lg
+@mixin h1Fa-lg{
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 7rem;
+    line-height: 12.7936rem;
+    color: $lightbrown;
+}
+//header h1 i.fa-lg ~ span
+@mixin span{
+    float: right;
+    width: 75%;
+    font-size: 3.998rem;
+    /**
+    2 lines of 3.998 * 1.6 = 12.7936
+    **/
+    padding-left: 1rem;
+    text-align: right;
+}
+
+//.focal h2
+@mixin h2-focal{
+    font-size: 1.999rem;
+    line-height: 1.2;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+//.content1 h3 i
+@mixin h3-i{
+    vertical-align: middle;
+    padding-right: 2rem;   
 }
