@@ -1,1 +1,204 @@
-// main SASS file
+// main SASS file// main SASS file
+// Import the three partials _variables.scss, _mixins.scss, _queries.scss which get imported into your main.scss file.
+@import "./partials/_variables.scss";
+@import "./partials/_mixins.scss";
+@import "./partials/_queries.scss";
+/*********************************
+			DEFAULTS
+*********************************/
+*{
+	@include all;
+	&:after,
+	&:before{
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+}
+html {
+	font-size: 16px;
+	font-family: $font-family;
+	line-height: 1.6;
+}
+h1, h2, h3, h4{
+	font-family: $heading-font;
+}
+ul{
+	list-style: none;
+}
+/***********************************************
+                SPECIAL
+***********************************************/
+.clearfix:after{
+	display: table;
+	clear: both;
+	content: "";
+}
+/***********************************************
+                LAYOUT
+***********************************************/
+		.bg-header{
+			@include bg-header;
+			&:before,
+			&:after{
+				@include b-af;
+			}
+			&:before{
+				left: 0;
+			}
+			&:after{
+				right: 0;
+			}
+		}
+		.bg-focal{
+			background-color: $lightbrown;
+			color: $darkbrown;
+		}
+		.bg-content1{
+			background-color: $white;
+			color: $darkgrey;
+		}
+		.bg-content2{
+			background-color: $lightblue;
+			color: $darkblue;
+		}
+		.bg-footer{
+			background-color: $white;
+			color: $lightgrey;
+		}
+		header{
+			@include header;
+		h1{
+			width: 100%;
+			padding: 0 2rem;
+		}	
+		nav{
+			width: 100%;
+		
+		>ul li{
+			width: 100%;
+			float: none;
+		}
+	}
+}
+	section{
+		&.focal{
+			width: 400px; /* default */
+			margin: 0 auto;
+		}
+		&.content1, 
+		&.content2{
+			padding: $padd;
+		}
+	}
+	.row{
+		clear: both;
+	}
+	.col-2{
+		@include col2;
+	}	
+	footer{
+	.col-2:first-child{
+		border-left: 0;
+	}
+	padding: $padd;
+	.p:last-child{
+	}
+}
+/***********************************************
+                NAVIGATION
+***********************************************/
+header{
+		nav{
+			padding: $padd;
+				clear: both;
+			&>ul>li>a{
+				@include nav;
+			&:hover{
+				font-weight: 700;
+				color: $darkbrown;
+			}	
+		}
+	}
+}
+/***********************************************
+                CONTENT
+***********************************************/
+header{
+	h1{
+		color: $darkbrown;
+	}
+	h1 i.fa-lg{
+		@include h1Fa-lg;
+		
+	}
+	h1 i.fa-lg ~ span{
+		@include span;
+		
+	}
+}
+.focal{
+	h2{
+		@include h2-focal;
+	}
+.author{
+		font-size: 1rem;
+		padding: 0.2rem 2rem 2rem;
+	}
+}
+.content1{
+	h3{
+		font-size: $font-size2;
+		padding: 0.2rem 2rem 2rem;
+	i{
+		@include h3-i;
+	}
+}
+	p{
+		font-size: $font-size1;
+		padding: 0.5rem 2rem 2rem;
+	}
+}
+.content2{
+	h3{
+		font-size: $font-size2;
+		padding: 1rem 2rem 0.5rem;
+	}
+	h4{
+		font-size: $font-size2;
+		padding: 1rem 2rem 0rem;
+	}
+	p{
+		font-size: $font-size1;
+		padding: 0.5rem 2rem 1rem;
+	}
+	li{
+		padding: $padd2;
+		font-size: $font-size1;
+	}
+}
+/***********************************************
+                FOOTER
+***********************************************/
+footer{
+		h4{
+			font-size: $font-size1;
+			padding: $padd2;
+			color: $darkbrown;
+		}
+		p{
+			font-size: 1rem;
+			padding: $padd2;
+			color: $darkgrey;
+		}
+		.fa-circle{
+			color: $darkgrey;
+		}
+		h4{
+			&[lang=de]{
+			display: block;
+		}
+		&[lang=en], &[lang=ar], &[lang=ru]{
+			display: none;
+			}
+		}
+	}
