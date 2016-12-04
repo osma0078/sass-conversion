@@ -90,3 +90,45 @@
     vertical-align: middle;
     padding-right: 2rem;   
 }
+
+// media query for header h1 i.falg
+@mixin media-h1-i-falg{
+    display:inline;
+    color: $darkbrown;
+    vertical-align:baseline;
+    float:none;
+    font-size: 4rem;
+    line-height: 6.3968rem;
+}
+
+//Media nav ul li a.
+@mixin media-nav{
+  font-size: 1rem;
+  line-height: 2rem;
+  min-height: 6rem;
+  border:none;
+  border-left:1px solid $lightgrey; 
+  padding:1.0rem;
+  background-color: $white;
+}
+
+// Queries
+
+// Tablet view
+@mixin tablet {
+    @media all and (min-width: 701px) and (max-width: 900px) {
+        @content;
+    }
+}
+// Desktop view
+@mixin desktop {
+    @media all and (min-width: 901px) and (max-width: 1400px) {
+        @content;
+    }
+}
+// Large desktop view
+@mixin large-desktop {
+    @media all and (min-width: 1401px) {
+        @content;
+    }
+}
